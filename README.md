@@ -85,6 +85,7 @@ Response:
 env  | value
 ------------- | -------------
 APP_PORT | 3000
+BILLBOARD_KEY | 'secret-cat'
 SKIP_DATABASE_CONNECTION | true/false
 MONGO_USER  | foo-bar
 MONGO_PASSWORD  | foo-bar
@@ -95,3 +96,4 @@ TESTING  | true/false
 
 * As the current state of this application does not need an Database connection, you can skip this part with the SKIP_DATABASE_CONNECTION enviroment variable. 
 * The TESTING enviroment variable is used to connect with the cluster Database connection on MongoDB Atlas, when this application go to production enviroment
+* Locally, you will need and API key from the [Billboard API](https://rapidapi.com/LDVIN/api/billboard-api/ "Billboard API") to test this application, and then set it to the BILLBOARD_KEY enviroment variable 
