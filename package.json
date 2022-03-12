@@ -1,0 +1,32 @@
+{
+  "name": "billboard-birthday",
+  "version": "0.0.1",
+  "description": "an API to discover the top 1 song on the day you were born",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniciuslunardi/billboard-birthday.git"
+  },
+  "keywords": [
+    "billboard",
+    "birthday",
+    "top100"
+  ],
+  "author": "Vinicius Lunardi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viniciuslunardi/billboard-birthday/issues"
+  },
+  "homepage": "https://github.com/viniciuslunardi/billboard-birthday#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@types/prettier": "^2.4.4",
+    "@types/typescript": "^2.0.0",
+    "jest": "^27.5.1",
+    "prettier": "^2.5.1",
+    "typescript": "^4.6.2"
+  }
+}
