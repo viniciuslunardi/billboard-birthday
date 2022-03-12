@@ -3,10 +3,9 @@ import httpStatus, {
   OK,
   INTERNAL_SERVER_ERROR,
 } from 'http-status';
-import { Response, Request, Router, response } from 'express';
+import { Response, Request, Router } from 'express';
 
 import BaseController from '@src/controllers/BaseController';
-import * as httpUtil from '@src/util/request';
 import { Billboard } from '@src/services/billboard/Billboard';
 
 export default class BillboardBirthday extends BaseController {
@@ -32,17 +31,17 @@ export default class BillboardBirthday extends BaseController {
 
       if (!date) {
         return res
-          .status(httpStatus.UNPROCESSABLE_ENTITY)
+          .status(UNPROCESSABLE_ENTITY)
           .send('You must enter a date to check the top 1 chart of that day');
       }
 
       const response = await this.billboard.getTopHundred(date);
 
-      return res.status(httpStatus.OK).send(response);
+      return res.status(OK).send(response);
     } catch (err: any) {
       console.error(err);
       return res
-        .status(err.code ? err.code : httpStatus.INTERNAL_SERVER_ERROR)
+        .status(err.code ? err.code : INTERNAL_SERVER_ERROR)
         .send(err && err.message ? err.message : '');
     }
   }

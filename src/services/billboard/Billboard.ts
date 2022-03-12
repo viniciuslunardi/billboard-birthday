@@ -12,9 +12,11 @@ export class Billboard {
 
   public async getTopHundred(date: any): Promise<any[]> {
     const validDate = this.isValidDate(date);
-    
+
     if (!validDate) {
-      throw new UnprocessableEntity('Invalid date format. Should be YYYY-MM-DD');
+      throw new UnprocessableEntity(
+        'Invalid date format. Should be YYYY-MM-DD'
+      );
     }
 
     try {
@@ -25,10 +27,14 @@ export class Billboard {
             'x-rapidapi-host': this.billboardApiHost,
             'x-rapidapi-key': process.env.BILLBOARD_KEY
               ? process.env.BILLBOARD_KEY
-              : '',
+              : 'secret-cat',
           },
         }
       );
+
+      if (response.data && response.data['ERROR']) {
+          throw new UnprocessableEntity('Billboard service error')
+      }
 
       return this.normalizeResponse(response.data);
     } catch (err: any) {

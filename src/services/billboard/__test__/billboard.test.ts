@@ -7,10 +7,6 @@ import normalizedBillboardResponse from '@test/fixtures/billboard/normalizedBill
 jest.mock('@src/util/request');
 
 describe('Billboard service', () => {
-  const mockedRequestClass = httpUtil.Request as jest.Mocked<
-    typeof httpUtil.Request
-  >;
-
   const mockedRequest = new httpUtil.Request() as jest.Mocked<httpUtil.Request>;
 
   it('should return the normalized billboard response from billboard service', async () => {
@@ -24,5 +20,19 @@ describe('Billboard service', () => {
     const response = await billboard.getTopHundred(date);
 
     expect(response).toEqual(normalizedBillboardResponse);
+  });
+
+  it('should get a generic error from Billboard service when the request fail', async () => {
+    const date = '2000-02-06';
+
+    mockedRequest.get.mockResolvedValue({
+      data: { ERROR: 'Please Check Your Request' },
+    } as httpUtil.Response);
+
+    const billboard = new Billboard(mockedRequest);
+
+    await expect(billboard.getTopHundred(date)).rejects.toThrow(
+      'Billboard service error'
+    );
   });
 });
