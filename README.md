@@ -1,12 +1,14 @@
 # Billboard Birthday
-### This is a sample project that integrates with the Billboard API to get the TOP 1 song on an specific date with an Youtube Video of the song!
+### This is a sample RESTful API project with typescript that integrates with the Billboard API to get the TOP 1 song on an specific date with an Youtube Video of the song!
 ### Status: under development
 #
 #
 ### Features
 - Web server with [express](https://www.npmjs.com/package/express "express")
-- Configurable database connection with mongoose
 - Unit and functional end-2-end tests with [Jest](https://www.npmjs.com/package/jest "Jest")
+- Code stylezation and formating with [Prettier](https://prettier.io/ "Prettier")
+- Static code analysis with [ESLint](https://eslint.org/ "ESLint")
+- Configurable MongoDB database connection with mongoose
 
 ### Installation 
 ```sh
@@ -90,5 +92,5 @@ MONGO_HOST | localhost
 MONGO_PORT  | 27017
 TESTING  | true/false
 
-* As the current state of this application does not need and Database connection, you can skip this part with the SKIP_DATABASE_CONNECTION enviroment variable. 
+* As the current state of this application does not need an Database connection, you can skip this part with the SKIP_DATABASE_CONNECTION enviroment variable. 
 * The TESTING enviroment variable is used to connect with the cluster Database connection on MongoDB Atlas, when this application go to production enviroment
