@@ -8,17 +8,15 @@ export default class Application {
   private _database!: Database;
 
   public async init(): Promise<void> {
-    console.info('connecting database');
     this._database = new Database();
     await this._database.init();
 
-    console.info('connecting server');
     this._server = Server.instance;
 
     const controllers: any = [new Billboard(this._server.router)];
 
-    console.log('initializing controllers');
     this._server.initializeControllers(controllers);
+    this._server.initializeErrorMiddlewares();
   }
 
   get server(): Server {

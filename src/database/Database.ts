@@ -3,8 +3,10 @@ import mongoose, { Connection } from 'mongoose';
 export default class Database {
   private _connection!: Connection; // definite assignment assertion
 
-  public async init(): Promise<Connection> {
-    let { MONGO_DATABASE, MONGO_HOST, MONGO_PASSWORD, MONGO_PORT, MONGO_USER } =
+  public async init(): Promise<Connection | boolean>  {
+    if (process.env.SKIP_DATABASE_CONNECTION === 'false') {
+
+      let { MONGO_DATABASE, MONGO_HOST, MONGO_PASSWORD, MONGO_PORT, MONGO_USER } =
       process.env;
 
     if (!MONGO_PORT) MONGO_PORT = '27017';
@@ -16,15 +18,6 @@ export default class Database {
 
 
     try {
-      console.log(
-        `connecting mongo on: \n
-					MONGO_DATABASE: ${MONGO_DATABASE}, \n
-					MONGO_HOST: ${MONGO_HOST},  \n
-					MONGO_PASSWORD: ${MONGO_PASSWORD}, \n
-					MONGO_PORT: ${MONGO_PORT}, \n
-					MONGO_USER: ${MONGO_USER}`
-      );
-
       if (process.env.TESTING === 'true') {
         await mongoose.connect(db_uri, {
           user: MONGO_USER,
@@ -40,6 +33,8 @@ export default class Database {
     }
 
     return (this._connection = mongoose.connection);
+    } 
+    return true;
   }
 
   get connection(): Connection {
