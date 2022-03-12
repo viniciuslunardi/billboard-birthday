@@ -1,0 +1,20 @@
+{
+  "info": {
+    "category": "Billboard",
+    "chart": "HOT 100",
+    "date": "2000-02-12",
+    "source": "Billboard-API"
+  },
+  "content": {
+    "1": {
+      "rank": "1",
+      "title": "I Knew I Loved You",
+      "artist": "Savage Garden",
+      "weeks at no.1": "3",
+      "last week": "1",
+      "peak position": "1",
+      "weeks on chart": "17",
+      "detail": "same"
+    }
+  }
+}

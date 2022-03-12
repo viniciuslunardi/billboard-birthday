@@ -1,6 +1,6 @@
 import Server from '@src/server/Server';
 import Database from '@src/database/Database';
-import Billboard from '@src/controllers/billboard/Billboard';
+import Billboard from '@src/controllers/billboard-birthday/BillboardBirthday';
 
 
 export default class Application {
