@@ -1,11 +1,10 @@
+import 'dotenv/config';
 
+import Application from '@src/application/Application';
 import supertest from 'supertest';
 
-//let server: SetupServer;
 beforeAll(async () => {
-  // server = new SetupServer();
-  // await server.init();
-  // global.testRequest = supertest(server.getApp());
+  const app = new Application();
+  await app.init();
+  global.testRequest = supertest(app.server.app);
 });
-
-//afterAll(async () => await server.close())

@@ -1,5 +1,7 @@
 import Server from '@src/server/Server';
 import Database from '@src/database/Database';
+import Billboard from '@src/controllers/billboard/Billboard';
+
 
 export default class Application {
   private _server!: Server; // definite assignment assertion
@@ -13,9 +15,10 @@ export default class Application {
     console.info('connecting server');
     this._server = Server.instance;
 
-    //    const controllers: any = [new UserController(this._server.router)];
+    const controllers: any = [new Billboard(this._server.router)];
 
-    //  this._server.initializeControllers(controllers);
+    console.log('initializing controllers');
+    this._server.initializeControllers(controllers);
   }
 
   get server(): Server {

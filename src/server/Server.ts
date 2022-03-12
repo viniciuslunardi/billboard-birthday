@@ -38,7 +38,7 @@ export default class Server {
   public initializeControllers(controllers: any): void {
     for (const controller of controllers) {
       console.log(`initializing controller ${controller.getName()}`);
-      this._app.use('/api', controller.router);
+      this.app.use('/api', controller.router);
     }
   }
 
