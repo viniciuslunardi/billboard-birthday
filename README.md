@@ -8,6 +8,7 @@
 - Unit and functional end-2-end tests with [Jest](https://www.npmjs.com/package/jest "Jest")
 - Code stylezation and formating with [Prettier](https://prettier.io/ "Prettier")
 - Static code analysis with [ESLint](https://eslint.org/ "ESLint")
+- CI/CD with GitHub Actions workflow
 - Configurable MongoDB database connection with mongoose
 
 ### Installation 
