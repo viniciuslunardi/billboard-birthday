@@ -84,6 +84,8 @@ Response:
 }
 ```
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/6873671-051ad1ea-866e-48c7-91a3-62abc5160f39?action=collection%2Ffork&collection-url=entityId%3D6873671-051ad1ea-866e-48c7-91a3-62abc5160f39%26entityType%3Dcollection%26workspaceId%3D5b9d28ff-8467-4ae8-a4c7-cb3bb1a3238f#?env%5BBillboard%20API%20Heroku%5D=W3sia2V5IjoiYmFzZVVybCIsInZhbHVlIjoiaHR0cHM6Ly9iaWxsYm9hcmQtYmlydGhkYXkuaGVyb2t1YXBwLmNvbS8iLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoiZGVmYXVsdCJ9XQ==)
+
 ### Enviroment Variables
 
 env  | value
