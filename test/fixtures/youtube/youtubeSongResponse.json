@@ -1,0 +1,182 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "tM9ZwZM6d7UTvXazh4Y-LE_9r9I",
+  "nextPageToken": "CAUQAA",
+  "regionCode": "BR",
+  "pageInfo": {
+    "totalResults": 155,
+    "resultsPerPage": 5
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "37-z6RzMjbWnDaR286FPaq3uQ78",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "SeLRIN1FFcE"
+      },
+      "snippet": {
+        "publishedAt": "2016-12-13T16:17:10Z",
+        "channelId": "UCeDDLvx5GigSJKFWkD2WZkw",
+        "title": "Boogarins - Elogio a instituição do cinismo (Lyric Video)",
+        "description": "Boogarins - Elogio a instituição do cinismo você ja não vê cor você não olha nos olhos e quando olha é só pra mentir quer ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/SeLRIN1FFcE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/SeLRIN1FFcE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/SeLRIN1FFcE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Boogarins",
+        "liveBroadcastContent": "none",
+        "publishTime": "2016-12-13T16:17:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "0D9Xv-URoa7Uo5cz9Rw_BrZZAr0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "C1D2eDplIMY"
+      },
+      "snippet": {
+        "publishedAt": "2020-08-28T03:23:45Z",
+        "channelId": "UCeDDLvx5GigSJKFWkD2WZkw",
+        "title": "Boogarins - Manchaca (Documentário SXSW 2019)",
+        "description": "Ative as Legendas caso não entenda Inglês / ☯️ ☯️ Turn ON Subtitles in case you don't understand Portuguese / ☯️ Direção: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/C1D2eDplIMY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/C1D2eDplIMY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/C1D2eDplIMY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Boogarins",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-08-28T03:23:45Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_qxFKLomtMNrWi1l9p3kRfGi5MU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "sPVoDDb-ITg"
+      },
+      "snippet": {
+        "publishedAt": "2018-11-28T18:35:55Z",
+        "channelId": "UCd4mTFLK9Ct4bgLlKAbhbcw",
+        "title": "Boogarins break down ‘”Lá Vem a Morte” | Red Bull Music Academy",
+        "description": "Subscribe to Red Bull Music Academy: https://win.gs/SubscribeRBMA Psych rock band Boogarins discuss how the title song from ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/sPVoDDb-ITg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/sPVoDDb-ITg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/sPVoDDb-ITg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Red Bull Music Academy",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-11-28T18:35:55Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_FraotyxJsZ3tZqwJgOXT_g-pHY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "h-KiU3UogWs"
+      },
+      "snippet": {
+        "publishedAt": "2015-08-25T15:53:40Z",
+        "channelId": "UCT__6F3TC58TdPexIk3eTQw",
+        "title": "BOOGARINS - Avalanche (lyric video)",
+        "description": "Pre-order 'Manual', out October 30, 2015 on Other Music Recording Co. http://smarturl.it/bgmnom Follow Boogarins on: Facebook ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/h-KiU3UogWs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/h-KiU3UogWs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/h-KiU3UogWs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "OtherMusicRecording",
+        "liveBroadcastContent": "none",
+        "publishTime": "2015-08-25T15:53:40Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "T01cI7NovZFsUdtdsOrU1opMMPg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "lARlfHBdC68"
+      },
+      "snippet": {
+        "publishedAt": "2019-02-14T16:38:30Z",
+        "channelId": "UCVjhQPe7fgvofDwtXzq8hnA",
+        "title": "Boogarins - Sombra ou Dúvida (Lyric Visualizer)",
+        "description": "From the forthcoming album \"Sombrou Dúvida\" out May 10, 2019. Pre-Order NOW: http://smarturl.it/SombrouDuvida More info: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lARlfHBdC68/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lARlfHBdC68/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lARlfHBdC68/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Overseas Artists Recordings",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-02-14T16:38:30Z"
+      }
+    }
+  ]
+}

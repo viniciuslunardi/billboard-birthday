@@ -11,6 +11,7 @@
     "lint:fix": "eslint ./src ./test --ext .ts --fix",
     "test:unit": "jest",
     "test:functional": "jest --projects ./test --forceExit --runInBand",
+    "test:coverage": "jest --collectCoverage",
     "style:check": "prettier --check 'src/**/*.ts' 'test/**/*.ts'",
     "style:fix": "prettier --write 'src/**/*.ts' 'test/**/*.ts'"
   },
