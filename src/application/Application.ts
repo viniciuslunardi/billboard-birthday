@@ -2,7 +2,6 @@ import Server from '@src/server/Server';
 import Database from '@src/database/Database';
 import Billboard from '@src/controllers/billboard-birthday/BillboardBirthday';
 
-
 export default class Application {
   private _server!: Server; // definite assignment assertion
   private _database!: Database;

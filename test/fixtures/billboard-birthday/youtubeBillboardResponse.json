@@ -1,0 +1,182 @@
+{
+    "kind": "youtube#searchListResponse",
+    "etag": "rn9Y7mVBIoJSg2288ZenVIw4yS8",
+    "nextPageToken": "CAUQAA",
+    "regionCode": "BR",
+    "pageInfo": {
+        "totalResults": 1000000,
+        "resultsPerPage": 5
+    },
+    "items": [
+        {
+            "kind": "youtube#searchResult",
+            "etag": "LVrrgE_4kohWpcnRB6NZSb4XI9w",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "jjnmICxvoVY"
+            },
+            "snippet": {
+                "publishedAt": "2009-10-25T08:41:39Z",
+                "channelId": "UCocAlqGOU7BqzKc87qx6WUg",
+                "title": "Savage Garden - I Knew I Loved You (Official Video)",
+                "description": "Savage Garden's official music video for 'I Knew I Loved You'. Click to listen to Savage Garden on Spotify: http://smarturl.it/SGSpot ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/jjnmICxvoVY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/jjnmICxvoVY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/jjnmICxvoVY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "SavageGardenVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2009-10-25T08:41:39Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "9o29Apa8RjP9zH8GxOf4uqw1cqg",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "DZqFK4dcl2Q"
+            },
+            "snippet": {
+                "publishedAt": "2007-10-26T13:47:01Z",
+                "channelId": "UCRjS5Zu_npb3k6Bgl6Q2MwQ",
+                "title": "Savage Garden - I Knew I Loved You (Lyrics)",
+                "description": "New video: Sia feat. Sean Paul - Cheap Thrills https://youtu.be/VOOhAXMzgN0 Wiz Khalifa Feat. Charlie Puth - See You Again ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/DZqFK4dcl2Q/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/DZqFK4dcl2Q/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/DZqFK4dcl2Q/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "djpeC",
+                "liveBroadcastContent": "none",
+                "publishTime": "2007-10-26T13:47:01Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "QYdB5b5lJP7sALgIgl1ba0shy60",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "r3gDjUJmeFU"
+            },
+            "snippet": {
+                "publishedAt": "2021-02-26T22:00:10Z",
+                "channelId": "UC5bLD3G6boBXZ0QsqBs81eg",
+                "title": "Savage Garden - I Knew I Loved You (Tradução) (Legendado) (Clipe Oficial)",
+                "description": "tbt para os apaixonados com a tradução da perfeita balada \"I Knew I Loved You\" do Savage Garden com o clipe oficial ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/r3gDjUJmeFU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/r3gDjUJmeFU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/r3gDjUJmeFU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Max Legendas",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-02-26T22:00:10Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "4T0SsNCgX-0mGvCVN7NWqmTHL7Q",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "MKway7VaCPU"
+            },
+            "snippet": {
+                "publishedAt": "2014-05-05T22:49:28Z",
+                "channelId": "UCpUahRobPdMbuT2nA_ZrFsA",
+                "title": "Savage Garden - I Knew I Loved You (HQ)",
+                "description": "All of my videos feature the best sound quality you'll find anywhere! Thanks for checking out my 90's channel. \"I Knew I Loved ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/MKway7VaCPU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/MKway7VaCPU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/MKway7VaCPU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Clay Culver",
+                "liveBroadcastContent": "none",
+                "publishTime": "2014-05-05T22:49:28Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "rP6jRNlFM1TSqvrGcJneUuNh7z8",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "WQnAxOQxQIU"
+            },
+            "snippet": {
+                "publishedAt": "2009-10-25T08:39:45Z",
+                "channelId": "UCocAlqGOU7BqzKc87qx6WUg",
+                "title": "Savage Garden - Truly Madly Deeply",
+                "description": "Savage Garden's official music video for 'Truly Madly Deeply'. Click to listen to Savage Garden on Spotify: http://smarturl.it/SGSpot ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/WQnAxOQxQIU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/WQnAxOQxQIU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/WQnAxOQxQIU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "SavageGardenVEVO",
+                "liveBroadcastContent": "none",
+                "publishTime": "2009-10-25T08:39:45Z"
+            }
+        }
+    ]
+}

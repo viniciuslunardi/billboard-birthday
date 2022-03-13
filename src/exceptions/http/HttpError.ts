@@ -1,14 +1,14 @@
-import * as statusCodes from "http-status";
+import * as statusCodes from 'http-status';
 
 export class HttpError extends Error {
-    protected _code: number;
+  protected _code: number;
 
-    constructor(message: string) {    
-        super(message);
-        this._code = statusCodes.INTERNAL_SERVER_ERROR;
-    }
+  constructor(message: string) {
+    super(message);
+    this._code = statusCodes.INTERNAL_SERVER_ERROR;
+  }
 
-    public get code(): number {
-		return this._code;
-	}
+  public get code(): number {
+    return this._code;
+  }
 }

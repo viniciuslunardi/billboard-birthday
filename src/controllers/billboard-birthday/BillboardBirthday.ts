@@ -7,10 +7,12 @@ import { Response, Request, Router } from 'express';
 
 import BaseController from '@src/controllers/BaseController';
 import { Billboard } from '@src/services/billboard/Billboard';
+import { Youtube } from '@src/services/youtube/Youtube';
 
 export default class BillboardBirthday extends BaseController {
   private name: string = 'billboard-birthday';
   private billboard: Billboard = new Billboard();
+  private youtube: Youtube = new Youtube();
 
   constructor(router: Router) {
     super(router);
@@ -35,7 +37,15 @@ export default class BillboardBirthday extends BaseController {
           .send('You must enter a date to check the top 1 chart of that day');
       }
 
-      const response = await this.billboard.getTopHundred(date);
+      const billboardData = await this.billboard.getTopHundred(date);
+      const youtubeData = await this.youtube.getYoutubeVideo(billboardData);
+
+      const response = {
+        ...billboardData,
+        youtube: {
+          ...youtubeData,
+        },
+      };
 
       return res.status(OK).send(response);
     } catch (err: any) {

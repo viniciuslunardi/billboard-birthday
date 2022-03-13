@@ -33,7 +33,7 @@ export class Billboard {
       );
 
       if (response.data && response.data['ERROR']) {
-          throw new UnprocessableEntity('Billboard service error')
+        throw new UnprocessableEntity('Billboard service error');
       }
 
       return this.normalizeResponse(response.data);
