@@ -6,7 +6,7 @@ import * as httpUtil from '@src/util/request';
 import youtubeSongResponse from '@test/fixtures/youtube/youtubeSongResponse.json';
 import normalizedYoutubeResponse from '@test/fixtures/youtube/normalizedYoutubeResponse.json';
 
-jest.mock('@src/util/request');
+jest.mock('@src/util/Request');
 
 describe('Youtube service', () => {
   const mockedRequest = new httpUtil.Request() as jest.Mocked<httpUtil.Request>;

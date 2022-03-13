@@ -4,7 +4,7 @@ import * as httpUtil from '@src/util/request';
 import billboardTopHundredResponse from '@test/fixtures/billboard/billboardTopHundredResponse.json';
 import normalizedBillboardResponse from '@test/fixtures/billboard/normalizedBillboardResponse.json';
 
-jest.mock('@src/util/request');
+jest.mock('@src/util/Request');
 
 describe('Billboard service', () => {
   const mockedRequest = new httpUtil.Request() as jest.Mocked<httpUtil.Request>;
