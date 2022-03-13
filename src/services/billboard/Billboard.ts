@@ -1,7 +1,12 @@
 import { HttpError } from '@src/exceptions/http/HttpError';
+import { NotFound } from '@src/exceptions/http/NotFound/NotFound';
 import { UnprocessableEntity } from '@src/exceptions/http/UnprocessableEntity/UnprocessableEntity';
+import {
+  BillboardReponse,
+  NormalizedBillboard,
+} from '@src/interfaces/Billboard';
+import { IErrorGeneric, IErrorResponse } from '@src/interfaces/Error';
 import * as httpUtil from '@src/util/Request';
-import { AxiosError } from 'axios';
 
 export class Billboard {
   readonly billboardApiRange: string = '1-1';
@@ -11,7 +16,7 @@ export class Billboard {
 
   constructor(protected request = new httpUtil.Request()) {}
 
-  public async getTopHundred(date: any): Promise<any[]> {
+  public async getTopHundred(date: string): Promise<NormalizedBillboard> {
     const validDate = this.isValidDate(date);
 
     if (!validDate) {
@@ -21,7 +26,7 @@ export class Billboard {
     }
 
     try {
-      const response = await this.request.get<any>(
+      const response = await this.request.get<BillboardReponse>(
         `${this.billboardApiUrl}?range=${this.billboardApiRange}&date=${date}`,
         {
           headers: {
@@ -38,12 +43,16 @@ export class Billboard {
       }
 
       return this.normalizeResponse(response.data);
-    } catch (err: any) {
+    } catch (data) {
+      const err = data as IErrorGeneric;
       if (err.response) {
-        const response = err.response;
-        throw new HttpError(response.data.message, response.status);
+        const errResponse = data as IErrorResponse;
+        throw new HttpError(
+          errResponse.response.data.message,
+          errResponse.response.status
+        );
       }
-      
+
       throw new HttpError(err ? err.message : 'Unexpeted Error');
     }
   }
@@ -65,10 +74,12 @@ export class Billboard {
     return dateObj.toISOString().startsWith(date);
   }
 
-  private normalizeResponse(billboardResponse: any): any {
+  private normalizeResponse(
+    billboardResponse: BillboardReponse
+  ): NormalizedBillboard {
     const response = billboardResponse.content['1'];
     if (!response) {
-      return {};
+      throw new NotFound('Not able to find the billboard top 1 for that day!');
     }
 
     return {

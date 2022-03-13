@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import http from 'http';
 
 import { missingRouteMiddleware } from '@src/server/middlewares/Middlewares';
+import { Controllers } from '@src/application/Application';
 
 export default class Server {
   private readonly _app: express.Express;
@@ -35,7 +36,7 @@ export default class Server {
     this.app.use(missingRouteMiddleware);
   }
 
-  public initializeControllers(controllers: any): void {
+  public initializeControllers(controllers: Controllers): void {
     for (const controller of controllers) {
       console.log(`Creating route ${controller.getName()}`);
       this.app.use('/api', controller.router);

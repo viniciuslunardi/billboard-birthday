@@ -1,6 +1,8 @@
 import Server from '@src/server/Server';
 import Database from '@src/database/Database';
-import Billboard from '@src/controllers/billboard-birthday/BillboardBirthday';
+import BillboardBirthday from '@src/controllers/billboard-birthday/BillboardBirthday';
+
+export type Controllers = [BillboardBirthday];
 
 export default class Application {
   private _server!: Server; // definite assignment assertion
@@ -12,7 +14,9 @@ export default class Application {
 
     this._server = Server.instance;
 
-    const controllers: any = [new Billboard(this._server.router)];
+    const controllers: Controllers = [
+      new BillboardBirthday(this._server.router),
+    ];
 
     this._server.initializeControllers(controllers);
     this._server.initializeErrorMiddlewares();

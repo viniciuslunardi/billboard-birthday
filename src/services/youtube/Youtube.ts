@@ -1,6 +1,12 @@
 import { HttpError } from '@src/exceptions/http/HttpError';
 import { NotFound } from '@src/exceptions/http/NotFound/NotFound';
-import { UnprocessableEntity } from '@src/exceptions/http/UnprocessableEntity/UnprocessableEntity';
+import { NormalizedBillboard } from '@src/interfaces/Billboard';
+import {
+  IErrorData,
+  IErrorGeneric,
+  IErrorResponse,
+} from '@src/interfaces/Error';
+import { NormalizedYoutube, YoutubeResponse } from '@src/interfaces/Youtube';
 import * as httpUtil from '@src/util/Request';
 
 export class Youtube {
@@ -10,22 +16,34 @@ export class Youtube {
 
   constructor(protected request = new httpUtil.Request()) {}
 
-  public async getYoutubeVideo(billboardData: any): Promise<any[]> {
+  public async getYoutubeVideo(
+    billboardData: NormalizedBillboard
+  ): Promise<NormalizedYoutube> {
     try {
       const song = this.formatSongString(billboardData);
 
-      const response = await this.request.get<any>(
+      const response = await this.request.get<YoutubeResponse>(
         `${this.baseUrl}/search?part=snippet&q=${song}&type=video&key=${this.apiKey}`
       );
-      
-      return this.normalizeResponse(response.data);
-    } catch (err: any) {
-      if (err.response) {
-        const response = err.response;
 
-        throw new HttpError(response.data.error.message, response.status);
+      return this.normalizeResponse(response.data);
+    } catch (data) {
+      const err = data as IErrorGeneric;
+
+      if (err.response) {
+        const errResponse = data as IErrorResponse;
+
+        throw new HttpError(
+          errResponse.response.data.error.message,
+          errResponse.response.status
+        );
       } else if (err.data) {
-        throw new HttpError(err.data.error.message, err.data.error.status);
+        const errData = data as IErrorData;
+
+        throw new HttpError(
+          errData.data.error.message,
+          errData.data.error.status
+        );
       }
 
       throw new HttpError(
@@ -35,11 +53,13 @@ export class Youtube {
     }
   }
 
-  private formatSongString(billboardData: any): string {
+  private formatSongString(billboardData: NormalizedBillboard): string {
     return `${billboardData.artist} - ${billboardData.title}`;
   }
 
-  private normalizeResponse(youtubeResponse: any): any {
+  private normalizeResponse(
+    youtubeResponse: YoutubeResponse
+  ): NormalizedYoutube {
     if (
       !youtubeResponse ||
       !youtubeResponse.items ||

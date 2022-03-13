@@ -5,15 +5,13 @@ export default class Database {
 
   public async init(): Promise<Connection | boolean> {
     if (process.env.SKIP_DATABASE_CONNECTION === 'false') {
-      let {
+      const {
         MONGO_DATABASE,
         MONGO_HOST,
         MONGO_PASSWORD,
         MONGO_PORT,
         MONGO_USER,
       } = process.env;
-
-      if (!MONGO_PORT) MONGO_PORT = '27017';
 
       const db_uri =
         process.env.TESTING === 'true'

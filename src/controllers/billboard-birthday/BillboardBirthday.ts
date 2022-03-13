@@ -1,16 +1,13 @@
-import httpStatus, {
-  UNPROCESSABLE_ENTITY,
-  OK,
-  INTERNAL_SERVER_ERROR,
-} from 'http-status';
+import { UNPROCESSABLE_ENTITY, OK, INTERNAL_SERVER_ERROR } from 'http-status';
 import { Response, Request, Router } from 'express';
 
 import BaseController from '@src/controllers/BaseController';
 import { Billboard } from '@src/services/billboard/Billboard';
 import { Youtube } from '@src/services/youtube/Youtube';
+import { IErrorData, IErrorGeneric } from '@src/interfaces/Error';
 
 export default class BillboardBirthday extends BaseController {
-  private name: string = 'billboard-birthday';
+  private name = 'billboard-birthday';
   private billboard: Billboard = new Billboard();
   private youtube: Youtube = new Youtube();
 
@@ -40,7 +37,7 @@ export default class BillboardBirthday extends BaseController {
       const billboardData = await this.billboard.getTopHundred(date);
       const youtubeData = await this.youtube.getYoutubeVideo(billboardData);
 
-      console.log(youtubeData)
+      console.log(youtubeData);
       const response = {
         ...billboardData,
         youtube: {
@@ -49,16 +46,19 @@ export default class BillboardBirthday extends BaseController {
       };
 
       return res.status(OK).send(response);
-    } catch (err: any) {
-      console.error(err);
+    } catch (data) {
+      const err = data as IErrorData;
+
       if (err.data) {
         return res
-        .status(err.data.code || err.data.status || INTERNAL_SERVER_ERROR)
-        .send(err.data.message || 'Unexpected Error');
+          .status(err.data.code || err.data.status || INTERNAL_SERVER_ERROR)
+          .send(err.data.message || 'Unexpected Error');
       }
+
+      const defaultErr = data as IErrorGeneric;
       return res
-        .status(err.code || err.status || INTERNAL_SERVER_ERROR)
-        .send(err.message || 'Unexpected Error');
+        .status(defaultErr.code || defaultErr.status || INTERNAL_SERVER_ERROR)
+        .send(defaultErr.message || 'Unexpected Error');
     }
   }
 }
