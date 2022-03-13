@@ -13,14 +13,25 @@ export class Youtube {
   public async getYoutubeVideo(billboardData: any): Promise<any[]> {
     try {
       const song = this.formatSongString(billboardData);
-      
+
       const response = await this.request.get<any>(
         `${this.baseUrl}/search?part=snippet&q=${song}&type=video&key=${this.apiKey}`
       );
-
+      
       return this.normalizeResponse(response.data);
     } catch (err: any) {
-      throw new HttpError(err ? err.message : 'Unexpeted Error');
+      if (err.response) {
+        const response = err.response;
+
+        throw new HttpError(response.data.error.message, response.status);
+      } else if (err.data) {
+        throw new HttpError(err.data.error.message, err.data.error.status);
+      }
+
+      throw new HttpError(
+        err.message || 'Unexpeted Error',
+        err.code || err.status || 500
+      );
     }
   }
 
@@ -29,11 +40,15 @@ export class Youtube {
   }
 
   private normalizeResponse(youtubeResponse: any): any {
-    const video = youtubeResponse.items[0];
-
-    if (!video) {
+    if (
+      !youtubeResponse ||
+      !youtubeResponse.items ||
+      !youtubeResponse.items[0]
+    ) {
       throw new NotFound('Not able to find youtube video!');
     }
+
+    const video = youtubeResponse.items[0];
 
     const videoId = video.id.videoId;
     const link = `${this.youtubeBaseUrl}${videoId}`;

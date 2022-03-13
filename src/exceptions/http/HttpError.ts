@@ -3,9 +3,9 @@ import * as statusCodes from 'http-status';
 export class HttpError extends Error {
   protected _code: number;
 
-  constructor(message: string) {
+  constructor(message: string, code: number = statusCodes.INTERNAL_SERVER_ERROR) {
     super(message);
-    this._code = statusCodes.INTERNAL_SERVER_ERROR;
+    this._code = code;
   }
 
   public get code(): number {

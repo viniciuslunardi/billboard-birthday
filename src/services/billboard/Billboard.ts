@@ -1,6 +1,7 @@
 import { HttpError } from '@src/exceptions/http/HttpError';
 import { UnprocessableEntity } from '@src/exceptions/http/UnprocessableEntity/UnprocessableEntity';
 import * as httpUtil from '@src/util/Request';
+import { AxiosError } from 'axios';
 
 export class Billboard {
   readonly billboardApiRange: string = '1-1';
@@ -38,6 +39,11 @@ export class Billboard {
 
       return this.normalizeResponse(response.data);
     } catch (err: any) {
+      if (err.response) {
+        const response = err.response;
+        throw new HttpError(response.data.message, response.status);
+      }
+      
       throw new HttpError(err ? err.message : 'Unexpeted Error');
     }
   }

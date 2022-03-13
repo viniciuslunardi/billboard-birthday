@@ -40,6 +40,7 @@ export default class BillboardBirthday extends BaseController {
       const billboardData = await this.billboard.getTopHundred(date);
       const youtubeData = await this.youtube.getYoutubeVideo(billboardData);
 
+      console.log(youtubeData)
       const response = {
         ...billboardData,
         youtube: {
@@ -50,9 +51,14 @@ export default class BillboardBirthday extends BaseController {
       return res.status(OK).send(response);
     } catch (err: any) {
       console.error(err);
+      if (err.data) {
+        return res
+        .status(err.data.code || err.data.status || INTERNAL_SERVER_ERROR)
+        .send(err.data.message || 'Unexpected Error');
+      }
       return res
-        .status(err.code ? err.code : INTERNAL_SERVER_ERROR)
-        .send(err && err.message ? err.message : '');
+        .status(err.code || err.status || INTERNAL_SERVER_ERROR)
+        .send(err.message || 'Unexpected Error');
     }
   }
 }

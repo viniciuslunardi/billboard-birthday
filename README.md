@@ -76,7 +76,11 @@ Response:
     "peak_position": "1",
     "weeks_at_num_1": "3",
     "rank": "1",
-    "weeks_on_chart": "17"
+    "weeks_on_chart": "17",
+    "youtube": {
+        "title": "Savage Garden - I Knew I Loved You (Official Video)",
+        "link": "https://www.youtube.com/watch?v=jjnmICxvoVY"
+    }
 }
 ```
 
