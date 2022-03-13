@@ -1,5 +1,5 @@
 import { Billboard } from '@src/services/billboard/Billboard';
-import * as httpUtil from '@src/util/request';
+import * as httpUtil from '@src/util/Request';
 
 import billboardTopHundredResponse from '@test/fixtures/billboard/billboardTopHundredResponse.json';
 import normalizedBillboardResponse from '@test/fixtures/billboard/normalizedBillboardResponse.json';
