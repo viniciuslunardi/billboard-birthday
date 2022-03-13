@@ -30,14 +30,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      # - name: Start MongoDB
-      #   uses: supercharge/mongodb-github-action@1.7.0
-      #   with:
-      #     mongodb-version: ${{ matrix.mongodb-version }}
-      #     mongodb-username: admin 
-      #     mongodb-password: admin
-      #     mongodb-db: nodets
-
       - name: Install dependencies
         run: npm install
 
@@ -46,12 +38,12 @@ jobs:
           SKIP_DATABASE_CONNECTION: true
 
         run: npm run test
-#
-#      - name: Deploy application
-#        if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' }}
-#        uses: akhileshns/heroku-deploy@v3.12.12
-#        with:
-#          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-#          heroku_app_name: "app"
-#          heroku_email: "email"
-#          buildpack: "https://github.com/zidizei/heroku-buildpack-tsc#v2.0"
+
+     - name: Deploy application
+       if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' }}
+       uses: akhileshns/heroku-deploy@v3.12.12
+       with:
+         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+         heroku_app_name: "billboard-birthday"
+         heroku_email: "vinilunardi00@gmail.com"
+         buildpack: "https://github.com/zidizei/heroku-buildpack-tsc#v2.0"
