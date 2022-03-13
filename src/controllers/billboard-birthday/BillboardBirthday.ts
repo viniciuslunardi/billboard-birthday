@@ -26,7 +26,7 @@ export default class BillboardBirthday extends BaseController {
 
   async getTopHundred(req: Request, res: Response): Promise<Response> {
     try {
-      const { date } = req.query;
+      const date = req.query.date as string;
 
       if (!date) {
         return res
