@@ -15,7 +15,7 @@ export default class Server {
   constructor() {
     this._app = express();
 
-    const port = process.env.APP_PORT || '3000';
+    const port = process.env.PORT || '3000';
     this.serverApp = this.listen(parseInt(port));
     this.initializeMiddlewares();
   }
