@@ -1,7 +1,6 @@
 # Billboard Birthday
 ### This is a sample RESTful API project with typescript that integrates with the Billboard API to get the TOP 1 song on an specific date with an Youtube Video of the song!
-### Status: under development
-#
+
 #
 ### Features
 - Web server with [express](https://www.npmjs.com/package/express "express")
