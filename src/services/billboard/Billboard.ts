@@ -48,15 +48,7 @@ export class Billboard {
       return this.normalizeResponse(response.data);
     } catch (data) {
       const err = data as IErrorGeneric;
-      if (err.response) {
-        const errResponse = data as IErrorResponse;
-        throw new HttpError(
-          errResponse.response.data.message,
-          errResponse.response.status
-        );
-      }
-
-      throw new HttpError(err ? err.message : 'Unexpeted Error');
+      throw new HttpError(err && err.message ? err.message : 'Unexpeted Error');
     }
   }
 
@@ -82,14 +74,18 @@ export class Billboard {
   private normalizeResponse(
     billboardResponse: BillboardReponse
   ): NormalizedBillboard {
-    const response = billboardResponse.content['1'];
+    const response =
+      billboardResponse && billboardResponse.content
+        ? billboardResponse.content['1']
+        : null;
+
     if (!response) {
       logger.error(
         `Error normalizing billboardResponse: ${JSON.stringify(
           billboardResponse
         )}`
       );
-      
+
       throw new NotFound('Not able to find the billboard top 1 for that day!');
     }
 
