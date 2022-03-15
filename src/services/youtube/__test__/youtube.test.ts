@@ -50,6 +50,18 @@ describe('Youtube service', () => {
     );
   });
 
+  it('should get a generic error from Youtube service when the request fail without information', async () => {
+    mockedRequest.get.mockRejectedValue({
+      data: null
+    } as httpUtil.Response);
+
+    const youtube = new Youtube(mockedRequest);
+
+    await expect(youtube.getYoutubeVideo(data)).rejects.toThrow(
+      'Unexpeted Error'
+    );
+  });
+
   it('should inform that youtube service was not able to find the video from the song', async () => {
     try {
       mockedRequest.get.mockResolvedValue({

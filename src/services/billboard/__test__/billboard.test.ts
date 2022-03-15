@@ -46,6 +46,16 @@ describe('Billboard service', () => {
     );
   });
 
+  it('should not be able to get the chart from Billboard service with an invalid date with wrong chars', async () => {
+    const date = '9999-89-98';
+
+    const billboard = new Billboard(mockedRequest);
+
+    await expect(billboard.getTopHundred(date)).rejects.toThrow(
+      'Invalid date format. Should be YYYY-MM-D'
+    );
+  });
+
   it('should get an generic error from Billboard service when the request fail', async () => {
     const date = '2000-02-06';
 

@@ -3,8 +3,7 @@ import { NotFound } from '@src/exceptions/http/NotFound/NotFound';
 import { NormalizedBillboard } from '@src/interfaces/Billboard';
 import {
   IErrorData,
-  IErrorGeneric,
-  IErrorResponse,
+  IErrorGeneric
 } from '@src/interfaces/Error';
 import { NormalizedYoutube, YoutubeResponse } from '@src/interfaces/Youtube';
 import { logger } from '@src/util/Logger';
@@ -33,14 +32,7 @@ export class Youtube {
     } catch (data) {
       const err = data as IErrorGeneric;
 
-      if (err.response) {
-        const errResponse = data as IErrorResponse;
-
-        throw new HttpError(
-          errResponse.response.data.error.message,
-          errResponse.response.status
-        );
-      } else if (err.data) {
+      if (err.data) {
         const errData = data as IErrorData;
 
         throw new HttpError(
