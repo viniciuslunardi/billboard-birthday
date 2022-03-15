@@ -1,6 +1,7 @@
 import Server from '@src/server/Server';
 import Database from '@src/database/Database';
 import BillboardBirthday from '@src/controllers/billboard-birthday/BillboardBirthday';
+import { logger } from '@src/util/Logger';
 
 export type Controllers = [BillboardBirthday];
 
@@ -9,6 +10,8 @@ export default class Application {
   private _database!: Database;
 
   public async init(): Promise<void> {
+    logger.info('Initializing Application...');
+
     this._database = new Database();
     await this._database.init();
 

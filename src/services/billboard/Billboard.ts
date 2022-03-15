@@ -6,6 +6,7 @@ import {
   NormalizedBillboard,
 } from '@src/interfaces/Billboard';
 import { IErrorGeneric, IErrorResponse } from '@src/interfaces/Error';
+import { logger } from '@src/util/Logger';
 import * as httpUtil from '@src/util/Request';
 
 export class Billboard {
@@ -20,6 +21,8 @@ export class Billboard {
     const validDate = this.isValidDate(date);
 
     if (!validDate) {
+      logger.error(`Invalid date format ${date}`);
+
       throw new UnprocessableEntity(
         'Invalid date format. Should be YYYY-MM-DD'
       );
@@ -58,6 +61,8 @@ export class Billboard {
   }
 
   private isValidDate(date: string): boolean {
+    logger.info(`Validating date: ${date}...`);
+
     const regex = /^\d{4}-\d{2}-\d{2}$/;
 
     if (date.match(regex) === null) {
@@ -79,6 +84,12 @@ export class Billboard {
   ): NormalizedBillboard {
     const response = billboardResponse.content['1'];
     if (!response) {
+      logger.error(
+        `Error normalizing billboardResponse: ${JSON.stringify(
+          billboardResponse
+        )}`
+      );
+      
       throw new NotFound('Not able to find the billboard top 1 for that day!');
     }
 

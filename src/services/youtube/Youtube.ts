@@ -7,6 +7,7 @@ import {
   IErrorResponse,
 } from '@src/interfaces/Error';
 import { NormalizedYoutube, YoutubeResponse } from '@src/interfaces/Youtube';
+import { logger } from '@src/util/Logger';
 import * as httpUtil from '@src/util/Request';
 
 export class Youtube {
@@ -21,6 +22,8 @@ export class Youtube {
   ): Promise<NormalizedYoutube> {
     try {
       const song = this.formatSongString(billboardData);
+
+      logger.info(`Fetching song data on youtube for ${song}...`);
 
       const response = await this.request.get<YoutubeResponse>(
         `${this.baseUrl}/search?part=snippet&q=${song}&type=video&key=${this.apiKey}`
@@ -65,6 +68,8 @@ export class Youtube {
       !youtubeResponse.items ||
       !youtubeResponse.items[0]
     ) {
+      logger.error('Not able to find song on youtube:', youtubeResponse);
+
       throw new NotFound('Not able to find youtube video!');
     }
 

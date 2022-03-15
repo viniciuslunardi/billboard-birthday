@@ -5,6 +5,7 @@ import BaseController from '@src/controllers/BaseController';
 import { Billboard } from '@src/services/billboard/Billboard';
 import { Youtube } from '@src/services/youtube/Youtube';
 import { IErrorData, IErrorGeneric } from '@src/interfaces/Error';
+import { logger } from '@src/util/Logger';
 
 export default class BillboardBirthday extends BaseController {
   private name = 'billboard-birthday';
@@ -29,15 +30,18 @@ export default class BillboardBirthday extends BaseController {
       const date = req.query.date as string;
 
       if (!date) {
+        logger.error('Tried to fetch Billboard chart without a date.');
+
         return res
           .status(UNPROCESSABLE_ENTITY)
           .send('You must enter a date to check the top 1 chart of that day');
       }
 
+      logger.info(`Fetching Billboard chart from ${date}...`);
+
       const billboardData = await this.billboard.getTopHundred(date);
       const youtubeData = await this.youtube.getYoutubeVideo(billboardData);
 
-      console.log(youtubeData);
       const response = {
         ...billboardData,
         youtube: {
@@ -45,6 +49,10 @@ export default class BillboardBirthday extends BaseController {
         },
       };
 
+      logger.info(
+        `Fetched Billboard data with response: ${JSON.stringify(response)}`
+      );
+      
       return res.status(OK).send(response);
     } catch (data) {
       const err = data as IErrorData;

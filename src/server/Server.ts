@@ -4,6 +4,7 @@ import http from 'http';
 
 import { missingRouteMiddleware } from '@src/server/middlewares/Middlewares';
 import { Controllers } from '@src/application/Application';
+import { logger } from '@src/util/Logger';
 
 export default class Server {
   private readonly _app: express.Express;
@@ -38,7 +39,7 @@ export default class Server {
 
   public initializeControllers(controllers: Controllers): void {
     for (const controller of controllers) {
-      console.log(`Creating route ${controller.getName()}`);
+      logger.info(`Creating route ${controller.getName()}`);
       this.app.use('/api', controller.router);
     }
   }
@@ -49,7 +50,7 @@ export default class Server {
 
   private listen(port: number): http.Server {
     return this._app.listen(port, () =>
-      console.log('Process running on ' + port)
+      logger.info('Process running on ' + port)
     );
   }
 
