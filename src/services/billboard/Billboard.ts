@@ -34,7 +34,7 @@ export class Billboard {
         {
           headers: {
             'x-rapidapi-host': this.billboardApiHost,
-            'x-rapidapi-key': process.env.BILLBOARD_KEY as string
+            'x-rapidapi-key': process.env.BILLBOARD_KEY as string || 'secret-cat',
           },
         }
       );

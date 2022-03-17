@@ -1,10 +1,7 @@
 import { HttpError } from '@src/exceptions/http/HttpError';
 import { NotFound } from '@src/exceptions/http/NotFound/NotFound';
 import { NormalizedBillboard } from '@src/interfaces/Billboard';
-import {
-  IErrorData,
-  IErrorGeneric
-} from '@src/interfaces/Error';
+import { IErrorData, IErrorGeneric } from '@src/interfaces/Error';
 import { NormalizedYoutube, YoutubeResponse } from '@src/interfaces/Youtube';
 import { logger } from '@src/util/Logger';
 import * as httpUtil from '@src/util/Request';

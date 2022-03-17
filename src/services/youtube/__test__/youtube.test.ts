@@ -52,7 +52,7 @@ describe('Youtube service', () => {
 
   it('should get a generic error from Youtube service when the request fail without information', async () => {
     mockedRequest.get.mockRejectedValue({
-      data: null
+      data: null,
     } as httpUtil.Response);
 
     const youtube = new Youtube(mockedRequest);

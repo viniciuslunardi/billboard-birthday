@@ -52,7 +52,7 @@ export default class BillboardBirthday extends BaseController {
       logger.info(
         `Fetched Billboard data with response: ${JSON.stringify(response)}`
       );
-      
+
       return res.status(OK).send(response);
     } catch (data) {
       const err = data as IErrorData;

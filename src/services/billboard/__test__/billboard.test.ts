@@ -85,7 +85,7 @@ describe('Billboard service', () => {
     const billboard = new Billboard(mockedRequest);
 
     await expect(billboard.getTopHundred(date)).rejects.toThrow(
-     'Not able to find the billboard top 1 for that day!'
+      'Not able to find the billboard top 1 for that day!'
     );
   });
 });
