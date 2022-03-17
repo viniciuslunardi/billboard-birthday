@@ -5,7 +5,7 @@ import {
   BillboardReponse,
   NormalizedBillboard,
 } from '@src/interfaces/Billboard';
-import { IErrorGeneric, IErrorResponse } from '@src/interfaces/Error';
+import { IErrorGeneric } from '@src/interfaces/Error';
 import { logger } from '@src/util/Logger';
 import * as httpUtil from '@src/util/Request';
 
